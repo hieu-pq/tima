@@ -18,6 +18,10 @@ use App\Http\Controllers\frontend\UserController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/vay-tien-online', [HomeController::class, 'vay_online'])->name('vay_online');
 
+Route::get('/tao-hop-dong-the-chap', function (){
+    return view('frontend.hopdong.thechap');
+})->name('users.thechap');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
