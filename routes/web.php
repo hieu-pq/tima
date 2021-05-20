@@ -28,14 +28,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');
-    Route::get('/vay-tin-chap', function (){
-        return view('frontend.hopdong.tinchap');
-    })->name('user.hopdong.tinchap');
-
-    Route::get('/vay-the-chap', function (){
-        return view('frontend.hopdong.thechap');
-    })->name('user.hopdong.thechap');
-
+    Route::get('/vay-tin-chap', [HomeController::class, 'vayTinChap']);
+    Route::get('/vay-the-chap', [HomeController::class, 'vayTheChap'] );
 });
 
 require __DIR__.'/employee.php'; // ghep file

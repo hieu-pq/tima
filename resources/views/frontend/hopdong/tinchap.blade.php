@@ -19,7 +19,7 @@
                 </div>
                 <form action="" class="form">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <h4 class="text-left">
                                 Thông tin cá nhân
                             </h4>
@@ -103,11 +103,15 @@
                                 <input type="file" class="form-control" id="imgIdCardBack" name="imgIdCardBack">
                             </div>
 
-                            <h5 class="text-left pt-4">
-                                Tài khoản ngân hàng
-                            </h5>
+                            <div class="form-group">
+                                <label>Ảnh chứa khuôn mặt<span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" id="imgFace" name="imgFace">
+                            </div>
 
                             <div class="form-group">
+
+                                <h5 class="text-left pt-4"> Tài khoản ngân hàng </h5>
+
                                 <label for="nameBank">Tên ngân hàng</label>
                                 <select class="form-control" id="nameBank" name="nameBank" placeholder="">
                                     <option>Techcombank</option>
@@ -135,31 +139,27 @@
                                 <label class="form-group" for="checkArgee">Tôi cam kết các thông tin trên đều chính xác và
                                     đồng ý với các điều kiện đưa ra</label>
                             </div>
+
                             <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng kí vay</button>
 
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <h5 class="text-left pt-4">
-                                Lựa chọn khoản tiền muốn vay
+                                Lựa chọn khoản vay
                             </h5>
-                            <select class="form-control">
-                                <option>5.000.000</option>
-                                <option>10.000</option>
-                                <option>15.000.000</option>
-                                <option>20.0000</option>
+                            <select class="form-control" name="khoan_vay" id="khoan_vay">
+                                <option></option>
+                                @foreach($khoanvay as $item)
+                                    <option value="{{$item->id}}" data-giatri="{{$item->gia_tri}}"
+                                            data-laisuat="{{$item->lai_suat}}" data-thoihan="{{$item->thoi_han}}">
+                                        {{number_format($item->gia_tri)}} VNĐ -
+                                        Lãi suất {{$item->lai_suat}}% -
+                                        Thời hạn {{$item->thoi_han}} tháng
+                                    </option>
+                                @endforeach
                             </select>
 
-                            <h5 class="text-left pt-4">
-                                Lựa chọn số tháng muốn vay
-                            </h5>
-                            <select class="form-control">
-                                <option>3 tháng</option>
-                                <option>6 tháng</option>
-                                <option>12 tháng</option>
-                                <option>24 tháng</option>
-                                <option>36 tháng</option>
-                            </select>
                         </div>
                     </div>
                 </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\KhoanVay;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,4 +16,15 @@ class HomeController extends Controller
     public function vay_online(){
         return view('frontend.vay-online');
     }
+
+    public function vayTinChap(){
+        return view('frontend.hopdong.tinchap', [
+            'khoanvay' => KhoanVay::all()
+        ]);
+    }
+
+    public function vayTheChap(){
+        return view('frontend.hopdong.thechap');
+    }
+
 }
