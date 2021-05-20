@@ -30,15 +30,6 @@
                         <label for="gia_tri">Giá trị khoản vay (VNĐ)</label>
                         <input type="number" step="1000" min="1000" class="form-control" id="gia_tri" name="gia_tri" value="{{$khoanvay->gia_tri}}" required>
                     </div>
-                    <div class="form-group">
-                        <label for="lai_suat">Lãi suất khoản vay theo năm (%)</label>
-                        <input type="number" step="0.1" min="1" max="100" class="form-control" id="lai_suat" name="lai_suat" value="{{$khoanvay->lai_suat}}" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="thoi_han">Thời hạn vay</label>
-                        <input type="number" step="1" min="3" max="12" class="form-control" id="thoi_han" name="thoi_han" value="{{$khoanvay->thoi_han}}" required>
-                    </div>
 
                     <button type="submit" class="btn btn-primary">Cập nhật</button>
 

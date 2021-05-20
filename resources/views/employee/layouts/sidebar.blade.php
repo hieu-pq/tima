@@ -71,15 +71,29 @@
 
     <!-- Nav Category -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKhoanVay"
            aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Khoản vay</span>
         </a>
-        <div id="collapseCategory" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseKhoanVay" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('employee.khoan-vay.index')}}">Danh sách khoản vay</a>
                 <a class="collapse-item" href="{{route('employee.khoan-vay.create')}}">Tạo mới</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaiSuat"
+           aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Lãi suất tháng</span>
+        </a>
+        <div id="collapseLaiSuat" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('employee.lai-suat.index')}}">Danh sách lãi suất</a>
+                <a class="collapse-item" href="{{route('employee.lai-suat.create')}}">Tạo mới</a>
             </div>
         </div>
     </li>

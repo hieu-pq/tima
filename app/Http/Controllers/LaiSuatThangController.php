@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KhoanVay;
+use App\Models\LaiSuatThang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class KhoanVayController extends Controller
+class LaiSuatThangController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('employee.khoanvay.list', [
-            'khoanvay' => KhoanVay::all()
+        return view('employee.laisuatthang.list', [
+            'items' => LaiSuatThang::all()
         ]);
     }
 
@@ -23,7 +27,7 @@ class KhoanVayController extends Controller
      */
     public function create()
     {
-        return view('employee.khoanvay.create');
+        return view('employee.laisuatthang.create');
     }
 
     /**
@@ -34,19 +38,20 @@ class KhoanVayController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['gia_tri']);
+        $data = $request->only(['thang', 'lai_suat_thang']);
 
         Validator::make($data,
             $rules = [
-                'gia_tri'=> 'required|integer',
+                'lai_suat_thang' => 'required|numeric',
+                'thang' => 'required|integer|min:1|max:36',
             ],
             $messages = [
                 'required' => ':attribute không được để trống',
                 'integer' => ':attribute phải là trường số',
             ])->validate();
 
-        KhoanVay::create($data);
-        session()->flash('success', 'Tạo khoản vay thành công');
+        LaiSuatThang::create($data);
+        session()->flash('success', 'Tạo lãi suất tháng thành công');
         return redirect()->back();
 
     }
@@ -54,10 +59,10 @@ class KhoanVayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\KhoanVay  $khoanVay
+     * @param  \App\Models\LaiSuatThang  $laiSuatThang
      * @return \Illuminate\Http\Response
      */
-    public function show(KhoanVay $khoanVay)
+    public function show(LaiSuatThang $laiSuatThang)
     {
         //
     }
@@ -65,13 +70,14 @@ class KhoanVayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\KhoanVay  $khoanVay
+     * @param  \App\Models\LaiSuatThang  $laiSuatThang
      * @return \Illuminate\Http\Response
      */
-    public function edit(KhoanVay $khoanVay)
+    public function edit(LaiSuatThang $laiSuatThang)
     {
-        return view('employee.khoanvay.edit', [
-            'khoanvay' => $khoanVay
+        dd($laiSuatThang);
+        return view('employee.laisuatthang.edit', [
+            'laiSuatThang' => $laiSuatThang
         ]);
     }
 
@@ -79,37 +85,39 @@ class KhoanVayController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\KhoanVay  $khoanVay
+     * @param  \App\Models\LaiSuatThang  $laiSuatThang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KhoanVay $khoanVay)
+    public function update(Request $request, LaiSuatThang $laiSuatThang)
     {
-        $data = $request->only(['gia_tri']);
+        $data = $request->only(['thang', 'lai_suat_thang']);
 
         Validator::make($data,
             $rules = [
-                'gia_tri'=> 'required|integer',
+                'lai_suat_thang' => 'required|numeric',
+                'thang' => 'required|integer|min:1|max:36',
             ],
             $messages = [
                 'required' => ':attribute không được để trống',
                 'integer' => ':attribute phải là trường số',
             ])->validate();
 
-        $khoanVay->update($data);
-        session()->flash('success', 'Cập nhật khoản vay thành công');
+        $laiSuatThang->update($data);
+        session()->flash('success', 'Cập nhật lãi suất tháng thành công');
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\KhoanVay  $khoanVay
+     * @param  \App\Models\LaiSuatThang  $laiSuatThang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KhoanVay $khoanVay)
+    public function destroy(LaiSuatThang $laiSuatThang)
     {
-        $khoanVay->delete();
-        session()->flash('success', 'Đã xóa khoản vay');
+        dd($laiSuatThang);
+        $laiSuatThang->delete();
+        session()->flash('success', 'Đã xóa lãi suất tháng');
         return redirect()->back();
     }
 }

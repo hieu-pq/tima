@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKhoanVaysTable extends Migration
+class CreateLaiSuatThangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateKhoanVaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('khoan_vays', function (Blueprint $table) {
+        Schema::create('lai_suat_thangs', function (Blueprint $table) {
             $table->id();
-            $table->double('gia_tri'); // toi da 6 12 24
-            $table->timestamps();
+            $table->float('lai_suat_thang');
+            $table->integer('thang');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateKhoanVaysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('khoan_vays');
+        Schema::dropIfExists('lai_suat_thangs');
     }
 }

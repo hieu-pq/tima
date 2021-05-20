@@ -145,22 +145,43 @@
                         </div>
 
                         <div class="col-md-5">
-                            <h5 class="text-left pt-4">
-                                Lựa chọn khoản vay
-                            </h5>
-                            <select class="form-control" name="khoan_vay" id="khoan_vay">
-                                <option></option>
-                                @foreach($khoanvay as $item)
-                                    <option value="{{$item->id}}" data-giatri="{{$item->gia_tri}}"
-                                            data-laisuat="{{$item->lai_suat}}" data-thoihan="{{$item->thoi_han}}">
-                                        {{number_format($item->gia_tri)}} VNĐ -
-                                        Lãi suất {{$item->lai_suat}}% -
-                                        Thời hạn {{$item->thoi_han}} tháng
-                                    </option>
-                                @endforeach
-                            </select>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="text-left pt-4">
+                                        Lựa chọn khoản vay
+                                    </h5>
+                                    <select class="form-control" name="khoan_vay" id="khoan_vay">
+                                        <option></option>
+                                        @foreach($khoanvay as $item)
+                                            <option value="{{$item->id}}" data-khoanvay="{{$item->gia_tri}}" >
+                                                {{number_format($item->gia_tri)}} VNĐ
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="text-left pt-4">
+                                        Lựa chọn tháng muốn vay
+                                    </h5>
+                                    <select class="form-control" name="khoan_vay" id="khoan_vay">
+                                        <option></option>
+                                        @foreach($laisuat as $item)
+                                            <option value="{{$item->id}}" data-thang="{{$item->thang}}"
+                                                    data-laisuat="{{$item->lai_suat_thang}}">
+                                                Thời hạn {{$item->thang}} tháng
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
 
                         </div>
+
+
                     </div>
                 </form>
 

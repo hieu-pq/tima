@@ -25,8 +25,6 @@
                     <tr>
                         <th scope="col">#TT</th>
                         <th scope="col">Khoản vay</th>
-                        <th scope="col">Lãi suất</th>
-                        <th scope="col">Thời hạn</th>
                         <th scope="col">Hành động</th>
                     </tr>
                     </thead>
@@ -36,16 +34,13 @@
                             <tr>
                                 <th scope="row">{{$loop->index +1}}</th>
                                 <td>{{number_format($item->gia_tri)}} VNĐ</td>
-                                <td>{{$item->lai_suat}} %</td>
-                                <td>{{$item->thoi_han}} tháng</td>
                                 <td>
                                     <a class="btn btn-sm btn-primary" href="{{route('employee.khoan-vay.edit', $item)}}"><i class="fas fa-pencil-alt"></i></a>
-                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#khoanVayModal"><i class="fas fa-trash"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#khoanVayModal-{{$item->id}}"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="khoanVayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal delete -->
+                            <div class="modal fade" id="khoanVayModal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <form action="{{route('employee.khoan-vay.destroy', $item)}}" method="POST">
                                         @csrf
@@ -58,7 +53,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                    Bạn thực sự muốn xóa khoản vay này?
+                                                Bạn thực sự muốn xóa khoản vay này?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Đóng</button>

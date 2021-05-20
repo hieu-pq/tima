@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\KhoanVay;
+use App\Models\LaiSuatThang;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,8 @@ class HomeController extends Controller
 
     public function vayTinChap(){
         return view('frontend.hopdong.tinchap', [
-            'khoanvay' => KhoanVay::all()
+            'khoanvay' => KhoanVay::all(),
+            'laisuat' => LaiSuatThang::all()
         ]);
     }
 
