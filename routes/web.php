@@ -26,7 +26,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');
-
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');
+});
 
 require __DIR__.'/employee.php'; // ghep file
