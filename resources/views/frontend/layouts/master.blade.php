@@ -118,14 +118,14 @@
                         </li>
 
                         <li class="nav-item  ">
-                            <a class="nav-link" href="/san-giao-dich.html">SÀN GIAO DỊCH</a>
+                            <a class="nav-link" href="/vay-tin-chap">Đăng ký vay tín chấp</a>
                         </li>
 
                         <li class="nav-item  ">
-                            <a class="nav-link" href="/Home/About/">VỀ TIMA</a>
+                            <a class="nav-link" href="/vay-the-chap">Đăng ký vay thế chấp</a>
                         </li>
                         <li class="nav-item shomb  ">
-                            <a class="nav-link" href="/tin-tuc">Tin tức</a>
+                            <a class="nav-link" href="/lien-he">Liên hệ</a>
                         </li>
 
                     </ul>
