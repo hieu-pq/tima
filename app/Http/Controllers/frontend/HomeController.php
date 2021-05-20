@@ -12,8 +12,7 @@ class HomeController extends Controller
         return view('frontend.home');
     }
 
-    public function vay_online()
-    {
+    public function vay_online(){
         return view('frontend.vay-online');
     }
 }

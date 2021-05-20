@@ -15,8 +15,8 @@ class CreateKhoanVaysTable extends Migration
     {
         Schema::create('khoan_vays', function (Blueprint $table) {
             $table->id();
-            $table->integer('lai_suat'); // %
-            $table->integer('tien_vay');
+            $table->integer('gia_tri');
+            $table->float('lai_suat'); // % theo nam
             $table->integer('thoi_han'); // 3 6 12
             $table->timestamps();
         });

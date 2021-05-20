@@ -74,12 +74,12 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
            aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Danh mục</span>
+            <span>Khoản vay</span>
         </a>
         <div id="collapseCategory" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Danh sách danh mục</a>
-                <a class="collapse-item" href="">Tạo mới</a>
+                <a class="collapse-item" href="{{route('employee.khoan-vay.index')}}">Danh sách khoản vay</a>
+                <a class="collapse-item" href="{{route('employee.khoan-vay.create')}}">Tạo mới</a>
             </div>
         </div>
     </li>
