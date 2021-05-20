@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::get('/vay-tien-online', [HomeController::class, 'vay_online'])->name('vay
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');
 
 
 require __DIR__.'/employee.php'; // ghep file
