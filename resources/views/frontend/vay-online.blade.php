@@ -14,7 +14,7 @@
 
         <div class="tm-card bg-white pt-6 bg-gray-lightest" id="frm-body-borrrower">
             <div class="container">
-                <div class="row _webPC mb-3" id="create-customer">
+                <div class="row _webPC" id="create-customer">
                     <div class="col-md-7" id="title_vaynhanhlaimong">
                         <div class="col-md-12 mb-2">
                             <img src="{{asset('/frontend')}}/Template1/images/icon-form-vay-nhanh.jpeg" /> <b style="padding-left: 10px;">CHỈ CẦN giấy đăng ký/cà vẹt xe máy</b>

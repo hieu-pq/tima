@@ -39,11 +39,11 @@
                 <ul class="topbar-list mb-0">
                     @auth()
                         <li class="topbar-list__item disabled">
-                            <span><strong>Đăng nhập với: {{auth()->user()->name}}</strong></span>
+                            <span><strong>{{auth()->user()->name}}</strong></span>
                         </li>
                         <li class="topbar-list__item">
                             <a rel="nofollow" class="topbar-list__link" href="/profile">
-                                Profile
+                                Thông tin người dùng
                             </a>
                         </li>
                         <li class="topbar-list__item">
@@ -64,20 +64,9 @@
                     @endauth
 
                     <li class="topbar-list__item">
-                        <a rel="nofollow" class="topbar-list__link" href="/tracuu">
-                            Tra cứu
-                        </a>
-                    </li>
-                    <li class="topbar-list__item">
-                        <a rel="nofollow" class="topbar-list__link" href="/huong-dan-giao-dich-tren-san-tima.html">
-                            Hỗ trợ
-                        </a>
-                    </li>
-
-                    <li class="topbar-list__item">
                         <a rel="nofollow" class="topbar-list__link text-primary fs-16 d-flex align-items-center" href="tel:1900633688">
                             <i class="icon-phone-gray mr-1"></i>
-                            <strong>1900.633.688</strong>
+                            <strong>035.943.4104</strong>
                         </a>
                     </li>
                 </ul>
@@ -108,13 +97,9 @@
                     </div>
                 </a>
                 <div class="collapse navbar-collapse" id="main-nav-collapse">
-                    <ul class="main-nav navbar-nav ml-auto">
+                    <ul class="main-nav navbar-nav ml-auto mb-4">
                         <li class="nav-item active ">
                             <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
-                        </li>
-
-                        <li class="nav-item  ">
-                            <a class="nav-link" href="/vay-tien-online">Cần một khoản vay</a>
                         </li>
 
                         <li class="nav-item  ">

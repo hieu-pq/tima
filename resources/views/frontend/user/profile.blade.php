@@ -1,153 +1,150 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-Profile
+    Profile
 @endsection
 
 @section('content')
-<form method="post">
-  <div class="row">
-      <div class="col-md-4">
-          <div class="profile-img">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-              <div class="file btn btn-lg btn-primary">
-                  Change Photo
-                  <input type="file" name="file"/>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-6">
-          <div class="profile-head">
-                      <h5>
-                          Kshiti Ghelani
-                      </h5>
-                      <h6>
-                          Web Developer and Designer
-                      </h6>
-                      <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-      <div class="col-md-2">
-          <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-4">
-          <div class="profile-work">
-              <p>WORK LINK</p>
-              <a href="">Website Link</a><br/>
-              <a href="">Bootsnipp Profile</a><br/>
-              <a href="">Bootply Profile</a>
-              <p>SKILLS</p>
-              <a href="">Web Designer</a><br/>
-              <a href="">Web Developer</a><br/>
-              <a href="">WordPress</a><br/>
-              <a href="">WooCommerce</a><br/>
-              <a href="">PHP, .Net</a><br/>
-          </div>
-      </div>
-      <div class="col-md-8">
-          <div class="tab-content profile-tab" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>User Id</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>Kshiti123</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Name</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>Kshiti Ghelani</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Email</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>kshitighelani@gmail.com</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Phone</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>123 456 7890</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Profession</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>Web Developer and Designer</p>
-                              </div>
-                          </div>
-              </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Experience</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>Expert</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Hourly Rate</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>10$/hr</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Total Projects</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>230</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>English Level</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>Expert</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <label>Availability</label>
-                              </div>
-                              <div class="col-md-6">
-                                  <p>6 months</p>
-                              </div>
-                          </div>
-                  <div class="row">
-                      <div class="col-md-12">
-                          <label>Your Bio</label><br/>
-                          <p>Your detail description</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</form> 
+    <div class="main-page">
+        <div class="tm-card bg-white pt-6 bg-gray-lightest" id="frm-body-borrrower">
+            <div class="container pb-4">
+                <div class="row mb-6">
+                    <h2 class="text-center col-md-12">
+                        Thông tin người dùng
+                    </h2>
+                </div>
+                <form action="" class="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                    class="avatar img-circle img-thumbnail" alt="avatar" style="border-radius: 50%">
+                                <p class="font-weight-light pt-2">Ảnh đại diện</p>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-left">
+                                        Tên đăng nhập
+                                    </p>
+                                    <p class="text-left">
+                                        Họ và tên
+                                    </p>
+                                    <p class="text-left">
+                                        Số điện thoại
+                                    </p>
+                                    <p class="text-left">
+                                        Email
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="text-left">
+                                        hieuml-ngungoc
+                                    </p>
+                                    <p class="text-left">
+                                        Hiếu Checker Việt
+                                    </p>
+                                    <p class="text-left">
+                                        0312345664
+                                    </p>
+                                    <p class="text-left">
+                                        hieucheckerviet@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-4">
+                                    <button type="button" data-toggle="modal" data-target="#editProfile"
+                                        class="btn btn-danger">Cập nhật thông
+                                        tin</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" data-toggle="modal" data-target="#editPassword"
+                                        class="btn btn-danger">Đổi mật khẩu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cập nhật thông tin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4" for="inputName">Họ và tên<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control col-md-8" id="inputName" name="inputName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4" for="inputPhone">Số điện thoại</label>
+                                <input type="text" class="form-control col-md-8" id="inputPhone" name="inputPhone"
+                                    placeholder="xxx">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4" for="inputEmail">Email</label>
+                                <input type="email" class="form-control col-md-8" id="inputEmail" name="inputEmail"
+                                    placeholder="xxx@gmail.com">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4" for="inputPassword">Mật khẩu cũ<span class="text-danger">*</span></label>
+                                <input type="password" value='' class="form-control col-md-8" id="inputOldPassword"
+                                    name="inputOldPassword" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4" for="inputPassword">Mật khẩu mới<span class="text-danger">*</span></label>
+                                <input type="password" value='' class="form-control col-md-8" id="inputNewPassword"
+                                    name="inputNewPassword" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

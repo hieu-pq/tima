@@ -14,7 +14,7 @@
             <div class="container pb-6">
                 <div class="row mb-6">
                     <h2 class="text-center col-md-12">
-                        Form đăng ký vay tín chấp
+                        Hồ sơ đăng ký vay tín chấp
                     </h2>
                 </div>
                 <form action="" class="form">
@@ -188,5 +188,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('scripts')
 
 @endsection
