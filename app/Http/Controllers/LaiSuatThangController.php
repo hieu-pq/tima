@@ -59,10 +59,10 @@ class LaiSuatThangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LaiSuatThang  $laiSuatThang
+     * @param  \App\Models\LaiSuatThang  $lai_suat
      * @return \Illuminate\Http\Response
      */
-    public function show(LaiSuatThang $laiSuatThang)
+    public function show(LaiSuatThang $lai_suat)
     {
         //
     }
@@ -70,14 +70,13 @@ class LaiSuatThangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LaiSuatThang  $laiSuatThang
+     * @param  \App\Models\LaiSuatThang  $lai_suat
      * @return \Illuminate\Http\Response
      */
-    public function edit(LaiSuatThang $laiSuatThang)
+    public function edit(LaiSuatThang $lai_suat)
     {
-        dd($laiSuatThang);
         return view('employee.laisuatthang.edit', [
-            'laiSuatThang' => $laiSuatThang
+            'lai_suat' => $lai_suat
         ]);
     }
 
@@ -85,10 +84,10 @@ class LaiSuatThangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LaiSuatThang  $laiSuatThang
+     * @param  \App\Models\LaiSuatThang  $lai_suat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LaiSuatThang $laiSuatThang)
+    public function update(Request $request, LaiSuatThang $lai_suat)
     {
         $data = $request->only(['thang', 'lai_suat_thang']);
 
@@ -102,7 +101,7 @@ class LaiSuatThangController extends Controller
                 'integer' => ':attribute phải là trường số',
             ])->validate();
 
-        $laiSuatThang->update($data);
+        $lai_suat->update($data);
         session()->flash('success', 'Cập nhật lãi suất tháng thành công');
         return redirect()->back();
     }
@@ -110,13 +109,12 @@ class LaiSuatThangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LaiSuatThang  $laiSuatThang
+     * @param  \App\Models\LaiSuatThang  $lai_suat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LaiSuatThang $laiSuatThang)
+    public function destroy(LaiSuatThang $lai_suat)
     {
-        dd($laiSuatThang);
-        $laiSuatThang->delete();
+        $lai_suat->delete();
         session()->flash('success', 'Đã xóa lãi suất tháng');
         return redirect()->back();
     }

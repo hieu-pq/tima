@@ -38,12 +38,12 @@
                             <td>{{$item->thang}} tháng</td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{route('employee.lai-suat.edit', $item)}}"><i class="fas fa-pencil-alt"></i></a>
-                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#khoanVayModal-{{$item->id}}"><i class="fas fa-trash"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#laiSuatModal-{{$item->id}}"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
 
                         <!-- Modal delete -->
-                        <div class="modal fade" id="khoanVayModal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="laiSuatModal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <form action="{{route('employee.lai-suat.destroy', $item)}}" method="POST">
                                     @csrf
