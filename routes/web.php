@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\HopDongController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\UserController;
 
@@ -28,8 +29,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');
-    Route::get('/vay-tin-chap', [HomeController::class, 'vayTinChap']);
-    Route::get('/vay-the-chap', [HomeController::class, 'vayTheChap'] );
+    Route::get('/vay-tin-chap', [HopDongController::class, 'vayTinChap']);
+    Route::get('/vay-the-chap', [HopDongController::class, 'vayTheChap'] );
+    Route::post('/vay-tin-chap', [HopDongController::class, 'vayTinChapCreate'])->name('tin-chap.create');
 });
 
 require __DIR__.'/employee.php'; // ghep file

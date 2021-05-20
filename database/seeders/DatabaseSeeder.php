@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'User Example',
                 'email' => 'user@gmail.com',
                 'password' => bcrypt('echoman13'),
+                'so_dt' => '0705911911'
             ]
         ]);
     }
