@@ -1,7 +1,7 @@
 @extends('employee.layouts.app')
 
 @section('title')
-    COMMIX Admin Dashboard
+    TIMA Admin Dashboard
 @endsection
 
 @section('content')

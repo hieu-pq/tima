@@ -22,7 +22,7 @@
                 <form action="{{route('tin-chap.create')}}" method="POST" class="form" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
-                    <input type="hidden" name="kieu_hd" value="thế chấp" required>
+                    <input type="hidden" name="kieu_hd" value="tín chấp" required>
                     <div class="row">
                         <div class="col-md-7">
                             <div class="form-group">
@@ -184,8 +184,8 @@
                                         <option></option>
                                         @foreach($laisuat as $item)
                                             <option value="{{$item->id}}" data-thang="{{$item->thang}}"
-                                                    data-laisuat="{{$item->lai_suat_thang}}">
-                                                Thời hạn {{$item->thang}} tháng
+                                                    data-laisuat="{{$item->lai_tin_chap}}">
+                                                Kỳ hạn {{$item->thang}} tháng
                                             </option>
                                         @endforeach
                                     </select>

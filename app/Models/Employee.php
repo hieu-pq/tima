@@ -32,4 +32,9 @@ class Employee extends Authenticatable
     public function hopDong(){
         return $this->hasMany(HopDong::class);
     }
+
+    public function isAdmin(){
+        return $this->role == 'admin';
+    }
+
 }

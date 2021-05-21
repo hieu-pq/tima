@@ -19,10 +19,6 @@ use App\Http\Controllers\frontend\UserController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/vay-tien-online', [HomeController::class, 'vay_online'])->name('vay_online');
 
-Route::get('/tao-hop-dong-the-chap', function (){
-    return view('frontend.hopdong.thechap');
-})->name('users.thechap');
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -32,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/vay-tin-chap', [HopDongController::class, 'vayTinChap']);
     Route::get('/vay-the-chap', [HopDongController::class, 'vayTheChap'] );
     Route::post('/vay-tin-chap', [HopDongController::class, 'vayTinChapCreate'])->name('tin-chap.create');
+    Route::post('/vay-the-chap', [HopDongController::class, 'vayTheChapCreate'])->name('the-chap.create');
 });
 
 require __DIR__.'/employee.php'; // ghep file

@@ -26,13 +26,18 @@
                         @method('POST')
 
                         <div class="form-group">
-                            <label for="lai_suat_thang">Lãi suất tính theo tháng ( % / tháng )</label>
-                            <input type="number" step="0.01" min="0.01" max="100" class="form-control" id="lai_suat_thang" name="lai_suat_thang" required>
+                            <label for="thang">Số tháng vay</label>
+                            <input type="number" step="1" min="1" max="36" class="form-control" id="thang" name="thang" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="thang">Số tháng vay</label>
-                            <input type="number" step="1" min="1" max="36" class="form-control" id="thang" name="thang" required>
+                            <label for="lai_the_chap">Lãi suất thế chấp tính theo tháng ( % / tháng )</label>
+                            <input type="number" step="0.01" min="0.01" max="100" class="form-control" id="lai_the_chap" name="lai_the_chap" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lai_tin_chap">Lãi suất tín chấp tính theo tháng ( % / tháng )</label>
+                            <input type="number" step="0.01" min="0.01" max="100" class="form-control" id="lai_tin_chap" name="lai_tin_chap" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Tạo mới</button>
