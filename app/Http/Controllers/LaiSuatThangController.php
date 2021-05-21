@@ -38,11 +38,12 @@ class LaiSuatThangController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thang', 'lai_suat_thang']);
+        $data = $request->only(['thang', 'lai_tin_chap', 'lai_the_chap']);
 
         Validator::make($data,
             $rules = [
-                'lai_suat_thang' => 'required|numeric',
+                'lai_tin_chap' => 'required|numeric',
+                'lai_the_chap' => 'required|numeric',
                 'thang' => 'required|integer|min:1|max:36',
             ],
             $messages = [
@@ -89,11 +90,12 @@ class LaiSuatThangController extends Controller
      */
     public function update(Request $request, LaiSuatThang $lai_suat)
     {
-        $data = $request->only(['thang', 'lai_suat_thang']);
+        $data = $request->only(['thang', 'lai_the_chap', 'lai_tin_chap']);
 
         Validator::make($data,
             $rules = [
-                'lai_suat_thang' => 'required|numeric',
+                'lai_the_chap' => 'required|numeric',
+                'lai_tin_chap' => 'required|numeric',
                 'thang' => 'required|integer|min:1|max:36',
             ],
             $messages = [

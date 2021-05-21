@@ -24,7 +24,8 @@
                     <thead>
                     <tr>
                         <th scope="col">#TT</th>
-                        <th scope="col">Lãi suất tháng</th>
+                        <th scope="col">Lãi suất thế chấp tháng</th>
+                        <th scope="col">Lãi suất tín chấp tháng</th>
                         <th scope="col">Tháng vay</th>
                         <th scope="col">Hành động</th>
                     </tr>
@@ -34,7 +35,8 @@
                     @foreach($items as $item)
                         <tr>
                             <th scope="row">{{$loop->index +1}}</th>
-                            <td>{{$item->lai_suat_thang}} %</td>
+                            <td>{{$item->lai_the_chap}} %</td>
+                            <td>{{$item->lai_tin_chap}} %</td>
                             <td>{{$item->thang}} tháng</td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{route('employee.lai-suat.edit', $item)}}"><i class="fas fa-pencil-alt"></i></a>

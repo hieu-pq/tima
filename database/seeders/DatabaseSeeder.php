@@ -38,7 +38,47 @@ class DatabaseSeeder extends Seeder
                 'name' => 'User Example',
                 'email' => 'user@gmail.com',
                 'password' => bcrypt('echoman13'),
+                'so_dt' => '0705911911'
             ]
+        ]);
+
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '15000000']
+        ]);
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '5000000']
+        ]);
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '10000000']
+        ]);
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '20000000']
+        ]);
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '40000000']
+        ]);
+        DB::table('khoan_vays')->insert([
+            ['gia_tri' => '50000000']
+        ]);
+
+        DB::table('lai_suat_thangs')->insert([
+            ['lai_tin_chap' => '3.5','lai_the_chap' => '3.15', 'thang' => 3]
+        ]);
+
+        DB::table('lai_suat_thangs')->insert([
+            ['lai_tin_chap' => '3.0','lai_the_chap' => '2.75', 'thang' => 6]
+        ]);
+
+        DB::table('lai_suat_thangs')->insert([
+            ['lai_tin_chap' => '2.5','lai_the_chap' => '2.0', 'thang' => 12]
+        ]);
+
+        DB::table('lai_suat_thangs')->insert([
+            ['lai_tin_chap' => '2','lai_the_chap' => '1.75', 'thang' => 24]
+        ]);
+
+        DB::table('lai_suat_thangs')->insert([
+            ['lai_tin_chap' => '1.75','lai_the_chap' => '1.5', 'thang' => 36]
         ]);
     }
 }

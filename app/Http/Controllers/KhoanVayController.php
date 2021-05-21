@@ -12,7 +12,7 @@ class KhoanVayController extends Controller
     public function index()
     {
         return view('employee.khoanvay.list', [
-            'khoanvay' => KhoanVay::all()
+            'khoanvay' => KhoanVay::orderBy('gia_tri')->get()
         ]);
     }
 

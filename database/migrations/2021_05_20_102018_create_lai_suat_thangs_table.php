@@ -15,8 +15,9 @@ class CreateLaiSuatThangsTable extends Migration
     {
         Schema::create('lai_suat_thangs', function (Blueprint $table) {
             $table->id();
-            $table->float('lai_suat_thang');
             $table->integer('thang');
+            $table->float('lai_the_chap');
+            $table->float('lai_tin_chap');
         });
     }
 

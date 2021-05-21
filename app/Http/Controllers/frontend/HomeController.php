@@ -18,15 +18,4 @@ class HomeController extends Controller
         return view('frontend.vay-online');
     }
 
-    public function vayTinChap(){
-        return view('frontend.hopdong.tinchap', [
-            'khoanvay' => KhoanVay::all(),
-            'laisuat' => LaiSuatThang::all()
-        ]);
-    }
-
-    public function vayTheChap(){
-        return view('frontend.hopdong.thechap');
-    }
-
 }

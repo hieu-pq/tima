@@ -21,9 +21,7 @@ class User extends Authenticatable
         'email',
         'password',
         'so_dt',
-        'gioi_tinh',
         'dia_chi',
-        'cccd',
     ];
 
     /**
@@ -45,7 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function hopDong(){
+    public function hopDongUser(){
         return $this->hasMany(HopDong::class);
     }
 

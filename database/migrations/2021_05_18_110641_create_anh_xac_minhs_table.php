@@ -15,8 +15,9 @@ class CreateAnhXacMinhsTable extends Migration
     {
         Schema::create('anh_xac_minhs', function (Blueprint $table) {
             $table->id();
+            $table->text('name');
             $table->text('path');
-            $table->bigInteger('hopdong_id');
+            $table->bigInteger('hop_dong_id');
         });
     }
 

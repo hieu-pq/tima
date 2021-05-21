@@ -135,6 +135,7 @@
                     <div class="col-main col-md-6 d-flex">
                         <div class="tm-reg__banner w-100" style="background-image:url('{{asset('/frontend')}}/Template1/images/bg-login.jpeg');"></div>
                     </div>
+
                     <div class="col-aside col-md-6 d-flex mb-5 mb-md-0">
                         <div class="tm-regform d-flex flex-column justify-content-between w-100 border border-gray bg-white">
                             <div class="fs-13" id="divFormRegister">
@@ -145,11 +146,10 @@
                                     @csrf
 
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                        <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -159,17 +159,17 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">Số điện thoại</label>
+                                        <label for="email" class="col-md-3 col-form-label text-md-right">Số điện thoại</label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <input id="so_dt" type="text" class="form-control" name="so_dt" value="{{ old('so_dt') }}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                                        <label for="email" class="col-md-3 col-form-label text-md-right">Email</label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                             @error('email')
@@ -181,9 +181,9 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                        <label for="password" class="col-md-3 col-form-label text-md-right">Mật khẩu</label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                             @error('password')
@@ -195,9 +195,9 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                        <label for="password-confirm" class="col-md-3 col-form-label text-md-right">Nhập lại</label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HopDong extends Model
 {
     use HasFactory;
-    protected $guarded = ['ma_hopdong'];
+    protected $guarded = [];
 
     public function nguoiTao(){
         return $this->belongsTo(Employee::class);
