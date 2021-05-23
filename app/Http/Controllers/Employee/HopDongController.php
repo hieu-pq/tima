@@ -62,13 +62,36 @@ class HopDongController extends Controller
 
     }
 
+    public function thanhly(Request $request,HopDong $hopdong){
 
+        $tiengoc = $hopdong->khoan_vay;
+
+        foreach ($hopdong->doanhthu as $item){
+            $tiengoc -= $item->tien_goc;
+        }
+
+        $tienlai = $tiengoc*(5/100);
+
+        $hopdong->doanhthu()->create([
+            'tien_goc' => $tiengoc,
+            'tien_lai' => $tienlai
+        ]);
+
+        $hopdong->update([
+            'trang_thai' => 'done',
+        ]);
+
+        session()->flash('success', 'Đã cập nhật trạng thái hợp đồng');
+
+        return redirect()->back();
+
+    }
     public function kyhan(Request $request, HopDong $hopdong){
 
         $data = json_decode($hopdong->ky_han);
 
         $tiengoc = $hopdong->khoan_vay/$hopdong->thang_vay;
-        $tienlai = ($hopdong->khoan_vay*$hopdong->lai_suat)/$hopdong->thang_vay;
+        $tienlai = ($hopdong->khoan_vay*$hopdong->lai_suat)/100;
 
         if ($request->ky_han){
             foreach ($request->ky_han as $item){
@@ -82,12 +105,11 @@ class HopDongController extends Controller
             }
             $hopdong->update(['ky_han' =>json_encode($data)]);
         }
-//4 5 7 8
+
         session()->flash('success', 'Đã cập nhật trạng thái kỳ hạn');
 
         return redirect()->back();
     }
-
 
     public function thongke(){
         return view('employee.thongke.index');

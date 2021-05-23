@@ -82,7 +82,8 @@
                                             </div>
                                         @endforeach
 
-                                            @if(!Auth::user()->isAdmin())
+
+                                            @if(!Auth::user()->isAdmin() && $hopdong->trang_thai!= 'done')
                                                 <button type="submit" class="btn btn-sm btn-primary mt-3">Cập nhật kỳ hạn</button>
                                             @endif
 
@@ -99,12 +100,21 @@
 
                                     @if($hopdong->trang_thai == 'done')
                                         Đã hoàn thành
+                                        @php
+                                          $tiengoc = 0; $tienlai = 0;
+
+                                            foreach ($hopdong->doanhthu as $item){
+                                                $tiengoc += $item->tien_goc;
+                                                $tienlai += $item->tien_lai;
+                                             }
+                                        @endphp
+                                        <p>Tổng tiền gốc thu về: {{number_format($tiengoc)}} VND</p>
+                                        <p>Tổng tiền lãi thu về: {{number_format($tienlai)}} VND</p>
                                     @endif
 
                                     @if($hopdong->trang_thai == 'thanh-li')
                                         Đã được thanh lý
                                     @endif
-
                                 </p>
 
                             </div>
@@ -151,7 +161,7 @@
                     <div class="row">
                         <div class="col-md-12 mb-3 mt-4 text-center">
 
-                            @if(!Auth::user()->isAdmin())
+                            @if(!Auth::user()->isAdmin() && $hopdong->trang_thai!= 'done')
 
                                 @if($hopdong->trang_thai == 'pending')
 
@@ -171,8 +181,10 @@
 
                                 @endif
 
-                                @if($hopdong->trang_thai != 'pending' && $hopdong->trang_thai != 'done')
-                                    <form action="" method="POST" class="d-inline">
+{{--                                @if($hopdong->trang_thai != 'pending' && $hopdong->trang_thai != 'done')--}}
+{{--                                    <form action="" method="POST" class="d-inline">--}}
+                                @if($hopdong->trang_thai != 'pending')
+                                    <form action="{{route('employee.admin.hopdong.thanhly', $hopdong)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('PATCH')
                                         <input type="hidden" name="trang_thai" value="reject">
