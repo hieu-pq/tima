@@ -61,4 +61,36 @@ class HopDongController extends Controller
         return redirect()->back();
 
     }
+
+
+    public function kyhan(Request $request, HopDong $hopdong){
+
+        $data = json_decode($hopdong->ky_han);
+
+        $tiengoc = $hopdong->khoan_vay/$hopdong->thang_vay;
+        $tienlai = ($hopdong->khoan_vay*$hopdong->lai_suat)/$hopdong->thang_vay;
+
+        if ($request->ky_han){
+            foreach ($request->ky_han as $item){
+                if ($data[$item]->trang_thai == 0 ){
+                    $hopdong->doanhthu()->create([
+                        'tien_goc' => $tiengoc,
+                        'tien_lai' => $tienlai
+                    ]);
+                }
+                $data[$item]->trang_thai = 1;
+            }
+            $hopdong->update(['ky_han' =>json_encode($data)]);
+        }
+//4 5 7 8
+        session()->flash('success', 'Đã cập nhật trạng thái kỳ hạn');
+
+        return redirect()->back();
+    }
+
+
+    public function thongke(){
+        return view('employee.thongke.index');
+    }
+
 }

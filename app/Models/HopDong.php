@@ -26,4 +26,8 @@ class HopDong extends Model
         return $this->belongsTo(KhoanVay::class);
     }
 
+    public function doanhthu(){
+        return $this->hasMany(DoanhThu::class);
+    }
+
 }

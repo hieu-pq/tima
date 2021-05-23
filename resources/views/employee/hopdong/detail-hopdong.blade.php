@@ -58,6 +58,9 @@
 
                                 <h5 class="mt-4 mb-4">Trạng thái hợp đồng</h5>
 
+                                @if($hopdong->employee_id && $employee !=null)
+                                    <p>Duyệt bởi: {{$employee->name}}</p>
+                                @endif
                                 <p>
                                     Trạng thái:
                                     @if($hopdong->trang_thai == 'active')
@@ -65,9 +68,25 @@
 
                                         <p>Giải ngân ngày: {{$hopdong->ngay_giai_ngan}}</p>
 
+                                        <h5 class="mt-4 mb-4">Kỳ hạn đóng tiền</h5>
+
+                                        <form action="{{route('employee.admin.hopdong.kyhan', $hopdong)}}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
+
                                         @foreach(json_decode($hopdong->ky_han) as $item)
-                                            Kỳ hạn: {{$item->ky_han}} - {{$item->trang_thai==0? 'chưa hoàn thành':'hoàn thành'}} <br>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="ky_han[]" value="{{$loop->index}}"
+                                                       class="form-check-input" id="checkbox-{{$loop->index}}" @if($item->trang_thai == 1) checked @endif>
+                                                <label class="form-check-label" for="checkbox-{{$loop->index}}">Kỳ hạn: {{$item->ky_han}} - {{$item->trang_thai==0? 'chưa hoàn thành':'hoàn thành'}}</label>
+                                            </div>
                                         @endforeach
+
+                                            @if(!Auth::user()->isAdmin())
+                                                <button type="submit" class="btn btn-sm btn-primary mt-3">Cập nhật kỳ hạn</button>
+                                            @endif
+
+                                        </form>
                                     @endif
 
                                     @if($hopdong->trang_thai == 'pending')
@@ -87,10 +106,6 @@
                                     @endif
 
                                 </p>
-
-                                @if($hopdong->employee_id && $employee !=null)
-                                    <p>Duyệt bởi: {{$employee->name}}</p>
-                                @endif
 
                             </div>
                         </div>
@@ -136,30 +151,34 @@
                     <div class="row">
                         <div class="col-md-12 mb-3 mt-4 text-center">
 
-                            @if($hopdong->trang_thai == 'pending')
-                                <form action="{{route('employee.admin.hopdong.duyet', $hopdong)}}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <input type="hidden" name="trang_thai" value="active">
-                                    <button type="submit" class="btn btn-success">Duyệt ngay</button>
-                                </form>
+                            @if(!Auth::user()->isAdmin())
 
-                                <form action="" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <input type="hidden" name="trang_thai" value="reject">
-                                    <button type="submit" class="btn btn-danger">Từ chối</button>
-                                </form>
+                                @if($hopdong->trang_thai == 'pending')
 
-                            @endif
+                                    <form action="{{route('employee.admin.hopdong.duyet', $hopdong)}}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <input type="hidden" name="trang_thai" value="active">
+                                        <button type="submit" class="btn btn-success">Duyệt ngay</button>
+                                    </form>
 
-                            @if($hopdong->trang_thai != 'pending' && $hopdong->trang_thai != 'done')
-                                <form action="" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <input type="hidden" name="trang_thai" value="reject">
-                                    <button type="submit" class="btn btn-warning">Thanh lý ngay</button>
-                                </form>
+                                    <form action="" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <input type="hidden" name="trang_thai" value="reject">
+                                        <button type="submit" class="btn btn-danger">Từ chối</button>
+                                    </form>
+
+                                @endif
+
+                                @if($hopdong->trang_thai != 'pending' && $hopdong->trang_thai != 'done')
+                                    <form action="" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <input type="hidden" name="trang_thai" value="reject">
+                                        <button type="submit" class="btn btn-warning">Thanh lý ngay</button>
+                                    </form>
+                                @endif
                             @endif
 
                             <a href="{{route('employee.admin.hopdong')}}" class="btn btn-primary mr-2">Trở về</a>
