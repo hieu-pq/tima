@@ -8,69 +8,49 @@
     <div class="main-page">
         <div class="tm-card bg-white pt-6 bg-gray-lightest" id="frm-body-borrrower">
             <div class="container pb-4">
-                <div class="row">
-                    <div class="text-center col-md-12">
-                        @include('frontend.template-parts.status')
-                    </div>
-                </div>
                 <div class="row mb-6">
-                    <h2 class="text-center col-md-12">
-                        Thông tin người dùng
-                    </h2>
+                    <h2 class="text-center col-md-12">Lịch sử hợp đồng</h2>
                 </div>
-                <form action="" class="form">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                    class="avatar img-circle img-thumbnail" alt="avatar" style="border-radius: 50%">
-                                <p class="font-weight-light pt-2">Ảnh đại diện</p>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p class="text-left">
-                                        Họ và tên
-                                    </p>
-                                    <p class="text-left">
-                                        Địa chỉ
-                                    </p>
-                                    <p class="text-left">
-                                        Số điện thoại
-                                    </p>
-                                    <p class="text-left">
-                                        Email
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="text-left">
-                                        {{Auth::user()->name}}
-                                    </p>
-                                    <p class="text-left">
-                                        {{Auth::user()->dia_chi ??'NULL'}}
-                                    </p>
-                                    <p class="text-left">
-                                        {{Auth::user()->so_dt}}
-                                    </p>
-                                    <p class="text-left">
-                                        {{Auth::user()->email}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-md-4">
-                                    <button type="button" data-toggle="modal" data-target="#editProfile"
-                                        class="btn btn-danger">Thay đổi thông tin</button>
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="button" data-toggle="modal" data-target="#editPassword"
-                                        class="btn btn-danger">Đổi mật khẩu</button>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#TT</th>
+                                    <th scope="col">Mã hợp đồng</th>
+                                    <th scope="col">Loại</th>
+                                    <th scope="col">Khoản vay</th>
+                                    <th scope="col">Thời hạn</th>
+                                    <th scope="col">Lãi suất</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th>Ngày tạo</th>
+                                    <th class="text-center">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(Auth::user()->hopDongUser as $item)
+
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>{{$item->ma_hd}}</td>
+                                        <td>{{$item->kieu_hd}}</td>
+                                        <td>{{number_format($item->khoan_vay)}} VND</td>
+                                        <td>{{$item->thang_vay}} tháng</td>
+                                        <td>{{$item->lai_suat}}%/tháng</td>
+                                        <td>{{$item->trang_thai}}</td>
+                                        <td>{{$item->created_at->format('d-m-Y')}}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('user.lichsu.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </td>
+                                    </tr>
+
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </div>

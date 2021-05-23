@@ -23,7 +23,9 @@ Route::prefix('employee')->name('employee.')->group(function () {
 
         Route::resource('lai-suat', LaiSuatThangController::class);
 
-        Route::get('/tin-chap', [HopDongController::class, 'adminView'])->name('admin.tinchap');
+        Route::get('/hop-dong', [HopDongController::class, 'adminView'])->name('admin.hopdong');
+        Route::get('/hop-dong/{hopdong}/chi-tiet', [HopDongController::class, 'detail'])->name('admin.detail');
+        Route::patch('/hop-dong/{hopdong}/chi-tiet', [HopDongController::class, 'duyet'])->name('admin.hopdong.duyet');
 
     });
 

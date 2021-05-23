@@ -10,7 +10,7 @@ class HopDong extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function nguoiTao(){
+    public function nhanVienDuyet(){
         return $this->belongsTo(Employee::class);
     }
 
