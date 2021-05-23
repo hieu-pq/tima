@@ -27,9 +27,9 @@
     </div>
 
 
-    @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+    @if(Auth::user()->isAdmin())
 
-    <!-- Nav Category -->
+    <!-- Khoan vay -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKhoanVay"
            aria-expanded="true" aria-controls="collapsePages">
@@ -44,6 +44,7 @@
         </div>
     </li>
 
+{{--    Lai suat - admin--}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaiSuat"
            aria-expanded="true" aria-controls="collapsePages">
@@ -58,21 +59,22 @@
         </div>
     </li>
 
-    <!-- Nav Category -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHD"
-           aria-expanded="true" aria-controls="collapsePages">
-            <i class="fab fa-product-hunt"></i>
-            <span>Hợp đồng</span>
-        </a>
-        <div id="collapseHD" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('employee.admin.hopdong')}}">Danh sách hợp đồng</a>
+{{-- ADMIN - TK Nhan vien--}}
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTK"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Tài khoản nhân viên</span>
+            </a>
+            <div id="collapseTK" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('employee.tai-khoan.index')}}">Danh sách tài khoản</a>
+                    <a class="collapse-item" href="{{route('employee.tai-khoan.create')}}">Tạo mới</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-{{--    Xem thong ke--}}
+{{--    Thong ke - admin --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('employee.thongke')}}">
             <i class="fas fa-cog"></i>
@@ -80,68 +82,16 @@
         </a>
     </li>
 
-    @else
-        <!-- Nav Category -->
-        <li class="nav-item">
-
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHD"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fab fa-product-hunt"></i>
-                <span>Hợp đồng</span>
-            </a>
-
-            <div id="collapseHD" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{route('employee.admin.hopdong')}}">Danh sách hợp đồng</a>
-                </div>
-            </div>
-
-        </li>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-           aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
 
     @endif
 
-    <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="">
-            <i class="fas fa-cog"></i>
-            <span>Cài đặt</span>
+        <a class="nav-link collapsed" href="{{route('employee.admin.hopdong')}}">
+            <i class="fab fa-product-hunt"></i>
+            <span>Danh sách hợp đồng</span>
         </a>
     </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
