@@ -57,6 +57,11 @@
                             @if($hopdong->employee_id && $employee!=null)
                                 <p>Duyệt bởi: {{$employee->name }}</p>
                                 <p>Giải ngân ngày: {{$hopdong->ngay_giai_ngan}}</p>
+
+                                @foreach(json_decode($hopdong->ky_han) as $item)
+                                    <p>Kỳ hạn: {{$item->ky_han}} - {{$item->trang_thai==0? 'chưa hoàn thành':'hoàn thành'}}</p>
+                                @endforeach
+
                             @endif
 
                         </div>
