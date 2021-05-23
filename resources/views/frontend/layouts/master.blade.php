@@ -46,6 +46,13 @@
                                 Thông tin người dùng
                             </a>
                         </li>
+
+                        <li class="topbar-list__item">
+                            <a rel="nofollow" class="topbar-list__link" href="/lich-su">
+                                Lịch sử hợp đồng
+                            </a>
+                        </li>
+
                         <li class="topbar-list__item">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
                                     @csrf

@@ -47,7 +47,7 @@
                                 <td>{{$item->created_at->format('d-m-Y')}}</td>
                                 <td>{{$item->trang_thai}}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                    <a href="{{route('employee.admin.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -81,7 +81,7 @@
                             <td>{{$item->created_at->format('d-m-Y')}}</td>
                             <td>{{$item->trang_thai}}</td>
                             <td>
-                                <button class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <a href="{{route('employee.admin.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     @endforeach

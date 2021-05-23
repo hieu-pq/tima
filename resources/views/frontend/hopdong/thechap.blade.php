@@ -190,7 +190,7 @@
 
                             <div class="form-group">
                                 <label for="anh_tai_san">Ảnh tài sản thế chấp<span class="text-danger">*</span></label>
-                                <input type="file" multiple class="form-control" name="anh_tai_san" id="anh_tai_san" required>
+                                <input type="file" multiple class="form-control" name="anh_tai_san[]" id="anh_tai_san" accept="image/*" required>
                             </div>
 
                         </div>

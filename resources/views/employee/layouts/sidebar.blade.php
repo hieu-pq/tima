@@ -73,6 +73,22 @@
     </li>
 
     @else
+
+    <!-- Nav Category -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHD"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fab fa-product-hunt"></i>
+                <span>Hợp đồng</span>
+            </a>
+            <div id="collapseHD" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('employee.admin.hopdong')}}">Danh sách hợp đồng</a>
+                </div>
+            </div>
+        </li>
+
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
