@@ -117,15 +117,7 @@
                         </li>
 
                         <li class="nav-item shomb  ">
-                            <a class="nav-link" href="{{route('vay_online')}}">Hướng dẫn</a>
-                        </li>
-
-                        <li class="nav-item shomb  ">
                             <a class="nav-link" href="{{route('chinhsach')}}">Chính sách</a>
-                        </li>
-
-                        <li class="nav-item shomb  ">
-                            <a class="nav-link" href="#">Liên hệ</a>
                         </li>
 
                     </ul>
