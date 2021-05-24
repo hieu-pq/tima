@@ -62,27 +62,27 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('lai_suat_thangs')->insert([
-            ['lai_tin_chap' => '3.5','lai_the_chap' => '3.15', 'thang' => 3]
+            ['lai_tin_chap' => '2.5','lai_the_chap' => '2.15', 'thang' => 3]
         ]);
 
         DB::table('lai_suat_thangs')->insert([
-            ['lai_tin_chap' => '3.0','lai_the_chap' => '2.75', 'thang' => 6]
+            ['lai_tin_chap' => '2.0','lai_the_chap' => '1.75', 'thang' => 6]
         ]);
 
         DB::table('lai_suat_thangs')->insert([
-            ['lai_tin_chap' => '2.5','lai_the_chap' => '2.0', 'thang' => 12]
+            ['lai_tin_chap' => '1.5','lai_the_chap' => '1.15', 'thang' => 12]
         ]);
 
         DB::table('lai_suat_thangs')->insert([
-            ['lai_tin_chap' => '2','lai_the_chap' => '1.75', 'thang' => 24]
+            ['lai_tin_chap' => '1','lai_the_chap' => '0.75', 'thang' => 24]
         ]);
 
         DB::table('lai_suat_thangs')->insert([
-            ['lai_tin_chap' => '1.75','lai_the_chap' => '1.5', 'thang' => 36]
+            ['lai_tin_chap' => '0.75','lai_the_chap' => '0.5', 'thang' => 36]
         ]);
 
         DB::table('ngan_saches')->insert([
-            ['nam' => '2020', 'tong'=> '1000000000','lan' => '1',
+            ['nam' => '2021', 'tong'=> '1000000000','lan' => '1',
                 'con_lai' => '1000000000', 'created_at' => now(),
                 'updated_at' => now() ]
         ]);

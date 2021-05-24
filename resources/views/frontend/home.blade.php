@@ -11,14 +11,14 @@
 
         <div id="main-slider-swiper" class="main-slider">
             <div class="swiper-wrapper">
-                <a href="http://onelink.to/tima" target="_blank" class="main-slider__item swiper-slide">
+                <a href="#" target="_blank" class="main-slider__item swiper-slide">
                     <div class="main-slider__bg" style="background-image:url('frontend/Template1/images/main-slider/banner-mytima.png');"></div>
                     <div class="container" style="margin-top:30px;">
                         <div class="main-slider__content text-center w-100 w-md-100 mx-auto">
                         </div>
                     </div>
                 </a>
-                <a href="https://hoptac.tima.vn/" target="_blank" class="main-slider__item swiper-slide">
+                <a href="#" target="_blank" class="main-slider__item swiper-slide">
                     <div class="main-slider__bg" style="background-image:url('frontend/Template1/images/main-slider/banner-hop-tac.png');"></div>
                     <div class="container" style="margin-top:30px;">
                         <div class="main-slider__content text-center w-100 w-md-100 mx-auto">
@@ -98,73 +98,73 @@
                     <div id="tm-feature-swiper" class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-tin-chap-theo-luong.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
-                                        <img data-src="frontend/Template1/images/product/newicon/vay-tin-chap-theo-luong.png" class="lazyload img-fluid " style="width:88px" alt="Vay t&#237;n chấp  theo lương" />
+                                        <img data-src="frontend/Template1/images/product/newicon/vay-tin-chap-theo-luong.png" class="lazyload img-fluid " style="width:88px"/>
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Vay t&#237;n chấp  theo lương', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-tin-chap-theo-luong.html">
+                                    <a>
                                         Vay tín chấp <br/> theo lương
                                     </a>
                                 </h3>
                             </div>
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-tien-bang-so-ho-khau.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
                                         <img data-src="frontend/Template1/images/product/newicon/Cam-so-ho-khau.png" class="lazyload img-fluid " style="width:88px" alt="Vay theo sổ hộ khẩu" />
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Vay theo sổ hộ khẩu', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-tien-bang-so-ho-khau.html">
+                                    <a>
                                         Vay theo <br/>sổ hộ khẩu
                                     </a>
                                 </h3>
                             </div>
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-tien-bang-cavet-xe-may.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
                                         <img data-src="frontend/Template1/images/product/newicon/vay-theo-dang-ky-xe-may.png" class="lazyload img-fluid " style="width:88px" alt="Vay theo đăng k&#253; xe m&#225;y" />
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Vay theo đăng k&#253; xe m&#225;y', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-tien-bang-cavet-xe-may.html">
+                                    <a>
                                         Vay theo <br/>đăng ký xe máy
                                     </a>
                                 </h3>
                             </div>
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-tra-gop.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
                                         <img data-src="frontend/Template1/images/product/newicon/vay-tra-gop-theo-ngay.png" class="lazyload img-fluid " style="width:88px" alt="Vay trả g&#243;p" />
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Vay trả g&#243;p', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-tra-gop.html">
+                                    <a>
                                         Vay trả góp
                                     </a>
                                 </h3>
                             </div>
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-tien-bang-dang-ky-xe-oto.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
                                         <img data-src="frontend/Template1/images/product/newicon/cam-oto-dang-ky-xe-oto.png" class="lazyload img-fluid " style="width:88px" alt="Vay theo đăng k&#253; xe &#244; t&#244;" />
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Vay theo đăng k&#253; xe &#244; t&#244;', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-tien-bang-dang-ky-xe-oto.html">
+                                    <a >
                                         Vay theo <br/>đăng ký xe ô tô
                                     </a>
                                 </h3>
                             </div>
                             <div class="tm-feature__item swiper-slide text-center">
-                                <a onclick="gtag('event', 'Vay theo cầm cố tài sản', {'event_category': 'product_slide','event_label': 'Icon Click'})" href="/vay-cam-do/the-chap-oto-10.html">
+                                <a>
                                     <div class="tm-feature__thumb mb-2 mx-auto">
                                         <img data-src="frontend/Template1/images/product/newicon/cam-oto.png" class="lazyload img-fluid " style="width:88px" alt="Cầm &#244; t&#244;" />
                                     </div>
                                 </a>
                                 <h3 class="tm-feature__title">
-                                    <a onclick="gtag('event', 'Cầm &#244; t&#244;', { 'event_category': 'product_slide', 'event_label': 'Title Click' });" href="/vay-cam-do/the-chap-oto-10.html">
+                                    <a>
                                         Cầm ô tô
                                     </a>
                                 </h3>
