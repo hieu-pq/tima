@@ -35,7 +35,7 @@
 
                             <h5 class="mt-4 mb-4">Thông tin tài khoản ngân hàng</h5>
 
-                            <p>Tên ngân hàng: {{$hopdong->ten_nh}} VNĐ</p>
+                            <p>Tên ngân hàng: {{$hopdong->ten_nh}}</p>
                             <p>Tên chủ tài khoản: {{$hopdong->chutk_nh}}</p>
                             <p>Số tài khoản: {{$hopdong->stk_nh}}</p>
 
