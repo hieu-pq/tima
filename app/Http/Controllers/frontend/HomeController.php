@@ -18,4 +18,8 @@ class HomeController extends Controller
         return view('frontend.vay-online');
     }
 
+    public function chinhsach(){
+        return view('frontend.chinhsach');
+    }
+
 }

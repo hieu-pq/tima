@@ -32,7 +32,7 @@
                                 @foreach(Auth::user()->hopDongUser as $item)
 
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">{{$loop->index+1}}</th>
                                         <td>{{$item->ma_hd}}</td>
                                         <td>{{$item->kieu_hd}}</td>
                                         <td>{{number_format($item->khoan_vay)}} VND</td>

@@ -112,9 +112,6 @@
                                         <p>Tổng tiền lãi thu về: {{number_format($tienlai)}} VND</p>
                                     @endif
 
-                                    @if($hopdong->trang_thai == 'thanh-li')
-                                        Đã được thanh lý
-                                    @endif
                                 </p>
 
                             </div>

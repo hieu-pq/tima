@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\Controller;
+use App\Models\DoanhThu;
 use App\Models\Employee;
 use App\Models\HopDong;
+use App\Models\NganSach;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,8 +36,18 @@ class HopDongController extends Controller
 
         if ($status == 'active'){
 
-            $arr = [];
+            $ngansach = NganSach::where('nam', date('Y').'')->orderBy('created_at', 'desc')->first();
 
+            if($hopdong->khoan_vay > $ngansach->con_lai){
+                session()->flash('error', 'Không đủ ngân sách để giải ngân cho hợp đồng này. Hãy bổ sung thêm ngân sách!');
+                return redirect()->back();
+            } else {
+                $ngansach->update([
+                    'con_lai' => $ngansach->con_lai - $hopdong->khoan_vay
+                ]);
+            }
+
+            $arr = [];
             $dateCreate = date("d-m-Y");
             $giai_ngan = $dateCreate;
 
@@ -70,7 +82,7 @@ class HopDongController extends Controller
             $tiengoc -= $item->tien_goc;
         }
 
-        $tienlai = $tiengoc*(5/100);
+        $tienlai = ceil($tiengoc*(5/100));
 
         $hopdong->doanhthu()->create([
             'tien_goc' => $tiengoc,
@@ -90,7 +102,7 @@ class HopDongController extends Controller
 
         $data = json_decode($hopdong->ky_han);
 
-        $tiengoc = $hopdong->khoan_vay/$hopdong->thang_vay;
+        $tiengoc = ($hopdong->khoan_vay/$hopdong->thang_vay);
         $tienlai = ($hopdong->khoan_vay*$hopdong->lai_suat)/100;
 
         if ($request->ky_han){
@@ -111,8 +123,41 @@ class HopDongController extends Controller
         return redirect()->back();
     }
 
-    public function thongke(){
-        return view('employee.thongke.index');
+    public function thongkedoanhthu(Request $request){
+
+        if ($request->has('date_from') && $request->has('date_to')){
+            $timeFrom = ($request->date_from);
+            $timeTo = ($request->date_to.' 23:59:59');
+            session()->flash('success', 'Doanh thu từ ngày: '.$timeFrom.' đến ngày '.$timeTo);
+            $doanhthu = DoanhThu::where('created_at', '>=',$timeFrom)->where('created_at', '<=',$timeTo)->get();
+        } else{
+            $doanhthu = DoanhThu::all();
+        }
+
+        return view('employee.thongke.thongke-doanhthu', [
+            'doanhthu' => $doanhthu
+        ]);
     }
+
+    public function thongkehopdong(Request $request){
+
+        if ($request->has('date_from') && $request->has('date_to')){
+            $timeFrom = ($request->date_from);
+            $timeTo = ($request->date_to.' 23:59:59');
+            session()->flash('success', 'Từ ngày: '.$timeFrom.' đến ngày '.$timeTo);
+            $tinchap = HopDong::where('created_at', '>=',$timeFrom)->where('created_at', '<=',$timeTo)->where('kieu_hd', 'tín chấp')->get();
+            $thechap = HopDong::where('created_at', '>=',$timeFrom)->where('created_at', '<=',$timeTo)->where('kieu_hd', '!=', 'tín chấp')->get();
+
+        } else{
+            $tinchap = HopDong::where('kieu_hd', 'tín chấp')->get();
+            $thechap = HopDong::where('kieu_hd', '!=', 'tín chấp')->get();
+        }
+
+        return view('employee.thongke.thongke-hopdong',[
+            'tinchap' => $tinchap,
+            'thechap' => $thechap,
+        ]);
+    }
+
 
 }

@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/chinh-sach', [HomeController::class, 'chinhsach'])->name('chinhsach');
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/profile', [UserController::class, 'Profile'])->name('user.profile');

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    Vay Online
+    Thông tin và hướng dẫn vay online
 @endsection
 
 @section('css')

@@ -75,15 +75,38 @@
         </li>
 
 {{--    Thong ke - admin --}}
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('employee.thongke')}}">
-            <i class="fas fa-cog"></i>
-            <span>Xem thống kê</span>
-        </a>
-    </li>
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethongke"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Thống kê</span>
+            </a>
+            <div id="collapsethongke" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('employee.thongkehd')}}">Xem thống kê hợp đồng</a>
+                    <a class="collapse-item" href="{{route('employee.thongke')}}">Xem thống doanh thu</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNS"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Ngân sách</span>
+            </a>
+            <div id="collapseNS" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('employee.ngan-sach.index')}}">Xem ngân sách</a>
+                    <a class="collapse-item" href="{{route('employee.ngan-sach.bosung')}}">Bổ sung ngân sách</a>
+                    <a class="collapse-item" href="{{route('employee.ngan-sach.create')}}">Thêm ngân sách</a>
+                </div>
+            </div>
+        </li>
 
     @endif
+
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('employee.admin.hopdong')}}">
@@ -91,7 +114,6 @@
             <span>Danh sách hợp đồng</span>
         </a>
     </li>
-
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

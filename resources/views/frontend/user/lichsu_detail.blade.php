@@ -52,12 +52,31 @@
                             <p>Lãi suất: {{$hopdong->lai_suat}}% / tháng</p>
 
                             <h5 class="mt-4 mb-4">Trạng thái hợp đồng</h5>
-                            <p>Trạng thái: {{$hopdong->trang_thai}}</p>
+                            <p>Phương thức vay: {{$hopdong->kieu_hd}}</p>
+                            <p> <strong>Trạng thái: </strong>
+
+                                @if($hopdong->trang_thai == 'active')
+                                    Hợp đồng còn hiệu lực / trong trạng thái hoạt động
+                                @endif
+
+                                @if($hopdong->trang_thai == 'pending')
+                                    Đang chờ duyệt
+                                @endif
+
+                                @if($hopdong->trang_thai == 'reject')
+                                    Đã bị từ chối
+                                @endif
+
+                                @if($hopdong->trang_thai == 'done')
+                                    Hợp đồng đã hoàn thành
+                                @endif
+
+                            </p>
 
                             @if($hopdong->employee_id && $employee!=null)
                                 <p>Duyệt bởi: {{$employee->name }}</p>
                                 <p>Giải ngân ngày: {{$hopdong->ngay_giai_ngan}}</p>
-
+                                <hr>
                                 @foreach(json_decode($hopdong->ky_han) as $item)
                                     <p>Kỳ hạn: {{$item->ky_han}} - {{$item->trang_thai==0? 'chưa hoàn thành':'hoàn thành'}}</p>
                                 @endforeach

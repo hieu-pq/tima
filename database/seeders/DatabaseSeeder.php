@@ -80,5 +80,12 @@ class DatabaseSeeder extends Seeder
         DB::table('lai_suat_thangs')->insert([
             ['lai_tin_chap' => '1.75','lai_the_chap' => '1.5', 'thang' => 36]
         ]);
+
+        DB::table('ngan_saches')->insert([
+            ['nam' => '2020', 'tong'=> '1000000000','lan' => '1',
+                'con_lai' => '1000000000', 'created_at' => now(),
+                'updated_at' => now() ]
+        ]);
+
     }
 }

@@ -86,7 +86,6 @@
                     <span class="hamburger-inner"></span>
                 </span>
                     <span class="fs-11" style="">Menu</span>
-
                 </button>
 
                 <a title="Tima vay trong ngày" class="navbar-brand header__logo py-0" href="/">
@@ -116,8 +115,17 @@
                         <li class="nav-item  ">
                             <a class="nav-link" href="/vay-the-chap">Đăng ký vay thế chấp</a>
                         </li>
+
                         <li class="nav-item shomb  ">
-                            <a class="nav-link" href="/lien-he">Liên hệ</a>
+                            <a class="nav-link" href="{{route('vay_online')}}">Hướng dẫn</a>
+                        </li>
+
+                        <li class="nav-item shomb  ">
+                            <a class="nav-link" href="{{route('chinhsach')}}">Chính sách</a>
+                        </li>
+
+                        <li class="nav-item shomb  ">
+                            <a class="nav-link" href="#">Liên hệ</a>
                         </li>
 
                     </ul>
@@ -389,29 +397,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="storelist">
-                                <div class="storelist-title" data-toggle="collapse" data-target="#vinhphuc" style="cursor: pointer;">
-                                    Danh sách PGD Vĩnh Phúc
-                                    <i id="_i_vinh_phuc" style="float: right; font-size: 15px; color: #ed522e;" class="fas fa-caret-right"></i>
-                                </div>
-                                <div class="collapse" id="vinhphuc">
-                                    <div class="row gutter-2">
-                                        <div class="col-6 mb-3">
-                                            <div class="media">
-                                                <i class="icon-map-marker"></i>
-                                                <div class="media-body">
-                                                        <span class="text-uppercase">
-                                                            Số 6B, đường Phạm Văn Đồng, P.Tích Sơn, Tp Vĩnh Yên, Vĩnh Phúc
-                                                        </span> <br>
-                                                    <div class="storelist-phonenumber">
-                                                        Hotline: <a href="tel:(028) 7302 8822">(028) 7302 8822</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-4">
@@ -486,21 +471,6 @@
                                         <a class="d-flex align-items-center" href="https://www.facebook.com/tima.vn">
                                             <label>Facebook: tima.vn</label>
                                         </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" style="padding-top: 20px;">
-                                <div class="mb-2 fs-16">
-                                    <label style="color: gray;">Giải thưởng</label>
-                                </div>
-
-                                <div class="d-flex align-items-end row">
-                                    <div class="col-6">
-                                        <img class="mr-4" src="/template1/images/vinasa.png" width="51" alt="vinasa" title="Vinasa">
-                                    </div>
-                                    <div class="col-6">
-                                        <img src="/template1/images/saokhue.png" width="26" alt="Sao khuê" title="Sao khuê">
                                     </div>
                                 </div>
                             </div>
@@ -859,7 +829,7 @@
             </div>
         </div>
             <p class="mb-0 text-gray-light text-center pb-2 pt-5">
-                © 2017 Bản quyền thuộc về Tima
+                © 2021 Bản quyền thuộc về Tima
             </p>
         </div>
     </footer>

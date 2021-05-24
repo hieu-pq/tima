@@ -49,7 +49,16 @@
         <div id="content">
 
         @include('employee.layouts.topbar') <!-- Topbar -->
-
+        <div class="mt-2 mb-3 ml-2 font-weight-bold d-flex justify-content-around">
+            <span>Tổng ngân sách: {{number_format($NGANSACH->tong)}} VND</span>
+            <span>Ngân sách còn lại: {{number_format($NGANSACH->con_lai)}} VND</span>
+            <span>Ngân sách năm: {{$NGANSACH->nam}}</span>
+            <span>Ngân sách lần: {{$NGANSACH->lan}}</span>
+        </div>
+            <div>
+                <hr>
+                <br> <br>
+            </div>
         @yield('content') <!-- Content -->
 
         @include('employee.layouts.footer') <!-- FOOTER -->
