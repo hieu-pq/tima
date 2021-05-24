@@ -168,13 +168,12 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-md-12">
                                     <label for="">Lựa chọn thời hạn muốn vay<span class="text-danger">*</span></label>
                                     <select class="form-control" name="laisuat_id" id="laisuat_id" required>
-                                        <option></option>
                                         @foreach($laisuat as $item)
-                                            <option value="{{$item->id}}" data-thang="{{$item->thang}}"
+                                            <option id="lai_suat{{$item->id}}" value="{{$item->id}}" data-thang="{{$item->thang}}"
                                                     data-laisuat="{{$item->lai_tin_chap}}">
                                                     {{$item->thang}} tháng
                                             </option>
@@ -183,12 +182,39 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="row mt-3" >
+                                <div class="col-md-6" style="display: flex; justify-content: left; align-items: center;">
+                                    Số tiền vay: 
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="btn btn-success" id="sotien_text" ></span>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3" >
+                                <div class="col-md-6" style="display: flex; justify-content: left; align-items: center;">
+                                    Lãi suất: 
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="btn btn-success" id="laisuat_text" ></span>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3" >
+                                <div class="col-md-6" style="display: flex; justify-content: left; align-items: center;">
+                                    Số tiền trả hàng tháng:  
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="btn btn-success"  id="tientra_text" ></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-3">
                                 <label for="tt_tai_san">Thông tin tài sản<span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="tt_tai_san" name="tt_tai_san" rows="3" required></textarea>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="anh_tai_san">Ảnh tài sản thế chấp<span class="text-danger">*</span></label>
                                 <input type="file" multiple class="form-control" name="anh_tai_san[]" id="anh_tai_san" accept="image/*" required>
                             </div>
@@ -205,5 +231,17 @@
 @endsection
 
 @section('scripts')
-
+    <script>
+        $("#laisuat_id").change(tinhlai);
+        $("#khoan_vay").change(tinhlai);
+        function tinhlai() {
+            const khoan_vay = !!$("#khoan_vay").val() ? parseInt($("#khoan_vay").val()) : 0
+            const lai_suat = parseFloat($(`#lai_suat${$("#laisuat_id").val()}`).attr('data-laisuat'))
+            const so_thang = parseInt($(`#lai_suat${$("#laisuat_id").val()}`).attr('data-thang'))
+            const tientra = khoan_vay / so_thang * (1 + lai_suat/100)
+            $("#sotien_text").text(khoan_vay.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+            $("#laisuat_text").text(lai_suat + '% / tháng');
+            $("#tientra_text").text(tientra.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+        };
+    </script>
 @endsection

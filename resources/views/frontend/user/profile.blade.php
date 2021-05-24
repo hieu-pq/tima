@@ -40,7 +40,7 @@
                                         Số điện thoại
                                     </p>
                                     <p class="text-left">
-                                        Email
+                                        Email (Tên đăng nhập)
                                     </p>
                                 </div>
                                 <div class="col-md-6">
@@ -137,14 +137,16 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-4" for="inputPassword">Mật khẩu cũ<span class="text-danger">*</span></label>
+                                <label class="col-md-4" for="inputPassword">Mật khẩu cũ<span
+                                        class="text-danger">*</span></label>
                                 <input type="password" value='' class="form-control col-md-8" id="inputOldPassword"
                                     name="inputOldPassword" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-4" for="inputPassword">Mật khẩu mới<span class="text-danger">*</span></label>
+                                <label class="col-md-4" for="inputPassword">Mật khẩu mới<span
+                                        class="text-danger">*</span></label>
                                 <input type="password" value='' class="form-control col-md-8" id="inputNewPassword"
                                     name="inputNewPassword" required>
                             </div>

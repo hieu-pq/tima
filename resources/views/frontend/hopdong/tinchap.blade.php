@@ -159,7 +159,7 @@
                                     đồng ý với các điều kiện đưa ra</label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-lg">Đăng kí vay</button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng kí vay</button>
 
                         </div>
 
@@ -177,13 +177,12 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-md-12">
                                     <label for="">Lựa chọn tháng muốn vay</label>
                                     <select class="form-control" name="laisuat_id" id="laisuat_id" required>
-                                        <option></option>
                                         @foreach($laisuat as $item)
-                                            <option value="{{$item->id}}" data-thang="{{$item->thang}}"
+                                            <option id="lai_suat{{$item->id}}" value="{{$item->id}}" data-thang="{{$item->thang}}"
                                                     data-laisuat="{{$item->lai_tin_chap}}">
                                                 Kỳ hạn {{$item->thang}} tháng
                                             </option>
@@ -191,7 +190,22 @@
                                     </select>
                                 </div>
                             </div>
-
+                            <div class="row mt-4" >
+                                <div class="col-md-6" style="display: flex; justify-content: left; align-items: center;">
+                                    Lãi suất: 
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="btn btn-success" id="laisuat_text" ></span>
+                                </div>
+                            </div>
+                            <div class="row mt-4" >
+                                <div class="col-md-6" style="display: flex; justify-content: left; align-items: center;">
+                                    Số tiền trả hàng tháng:  
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="btn btn-success"  id="tientra_text" ></span>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -204,5 +218,16 @@
 @endsection
 
 @section('scripts')
-
+    <script>
+        $("#laisuat_id").change(tinhlai);
+        $("#khoan_vay").change(tinhlai);
+        function tinhlai() {
+            const khoan_vay = parseInt($("#khoan_vay").val())
+            const lai_suat = parseFloat($(`#lai_suat${$("#laisuat_id").val()}`).attr('data-laisuat'))
+            const so_thang = parseInt($(`#lai_suat${$("#laisuat_id").val()}`).attr('data-thang'))
+            const tientra = khoan_vay / so_thang * (1 + lai_suat/100)
+            $("#laisuat_text").text(lai_suat + '% / tháng');
+            $("#tientra_text").text(tientra.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+        }
+    </script>
 @endsection
