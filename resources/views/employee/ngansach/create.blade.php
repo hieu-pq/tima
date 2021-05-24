@@ -21,31 +21,40 @@
         <div class="row">
             <div class="col-md-6 m-auto">
 
-                {{($ngansach)}}
+                <form action="{{route('employee.ngan-sach.store')}}" method="POST">
 
-                    <form action="{{route('employee.ngan-sach.store')}}" method="POST">
+                    @csrf
+                    @method('POST')
 
-                        @csrf
-                        @method('POST')
+                        <div class="row">
 
-                        <div class="form-group">
-                            <label for="thang">Số tháng vay</label>
-                            <input type="number" step="1" min="1" max="36" class="form-control" id="thang" name="thang" required>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Mức ngân sách</label>
+                                    <input type="text" class="form-control" name="tong" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Năm</label>
+                                    <input type="text" class="form-control" name="nam" required>
+                                    <small>
+                                        <i><b>Lưu ý rằng</b>, bạn không thể tạo mới ngân sách của các năm đã có.
+                                            Nếu bạn tạo ngân sách cho các năm trong tương lai, ngân sách sẽ được tự động sử dụng khi thời gian chuyển giao sang năm đó.
+                                            Các hành động sau khi tạo mới ngân sách là không thể khôi phục.
+                                        </i>
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary">Tạo mới</button>
+                            </div>
+
                         </div>
 
-                        <div class="form-group">
-                            <label for="lai_the_chap">Lãi suất thế chấp tính theo tháng ( % / tháng )</label>
-                            <input type="number" step="0.01" min="0.01" max="100" class="form-control" id="lai_the_chap" name="lai_the_chap" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="lai_tin_chap">Lãi suất tín chấp tính theo tháng ( % / tháng )</label>
-                            <input type="number" step="0.01" min="0.01" max="100" class="form-control" id="lai_tin_chap" name="lai_tin_chap" required>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Tạo mới</button>
-
-                    </form>
+                </form>
             </div>
         </div>
     </div>

@@ -37,7 +37,24 @@ class NganSachController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $data = NganSach::where('nam', $request->nam)->first();
+
+        if($data!=null){
+            session()->flash('error', 'Ngân sách cho năm '. $request->nam.' đã được tạo. Vui lòng kiểm tra lại và tạo ngân sách bổ sung nếu muốn.');
+            return redirect()->back();
+        }
+
+        NganSach::create([
+            'tong' => $request->tong,
+            'nam' => $request->nam,
+            'lan' => 1,
+            'con_lai' => $request->tong
+        ]);
+
+        session()->flash('success', 'Đã tạo ngân sách mới');
+
+        return redirect()->back();
+
     }
 
     public function store_bs(Request $request)

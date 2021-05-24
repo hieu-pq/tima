@@ -21,8 +21,6 @@
         <div class="row">
             <div class="col-md-6 m-auto">
 
-                {{($ngansach)}}
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
