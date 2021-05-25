@@ -18,7 +18,11 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('admin_assets')}}/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <style>
+        .bg-login-image{
+            background-image: url("https://vcdn-giadinh.vnecdn.net/2021/04/14/vay-2-6810-1618414587.jpg") ;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-primary">
