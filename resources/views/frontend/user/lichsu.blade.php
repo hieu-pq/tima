@@ -38,7 +38,12 @@
                                         <td>{{number_format($item->khoan_vay)}} VND</td>
                                         <td>{{$item->thang_vay}} tháng</td>
                                         <td>{{$item->lai_suat}}%/tháng</td>
-                                        <td>{{$item->trang_thai}}</td>
+                                        <td>
+                                            @if($item->trang_thai == 'active') Có hiệu lực @endif
+                                            @if($item->trang_thai == 'reject') Đã bị từ chối @endif
+                                            @if($item->trang_thai == 'done') Đã hoàn thành @endif
+                                            @if($item->trang_thai == 'pending') Đang chờ duyệt  @endif
+                                        </td>
                                         <td>{{$item->created_at->format('d-m-Y')}}</td>
                                         <td class="text-center">
                                             <a href="{{route('user.lichsu.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>

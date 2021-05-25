@@ -73,7 +73,7 @@
 
                             </p>
 
-                            @if($hopdong->employee_id && $employee!=null)
+                            @if($hopdong->employee_id && $employee!=null && $hopdong->trang_thai != 'reject')
                                 <p>Duyệt bởi: {{$employee->name }}</p>
                                 <p>Giải ngân ngày: {{$hopdong->ngay_giai_ngan}}</p>
                                 <hr>

@@ -45,7 +45,12 @@
                                 <td>{{$item->thang_vay}} tháng</td>
                                 <td>{{$item->lai_suat}}%</td>
                                 <td>{{$item->created_at->format('d-m-Y')}}</td>
-                                <td>{{$item->trang_thai}}</td>
+                                <td>
+                                    @if($item->trang_thai == 'active') Có hiệu lực @endif
+                                    @if($item->trang_thai == 'reject') Đã bị từ chối @endif
+                                    @if($item->trang_thai == 'done') Đã hoàn thành  @endif
+                                    @if($item->trang_thai == 'pending') Đang chờ duyệt  @endif
+                                </td>
                                 <td>
                                     <a href="{{route('employee.admin.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </td>
@@ -79,7 +84,12 @@
                             <td>{{$item->thang_vay}} tháng</td>
                             <td>{{$item->lai_suat}}%</td>
                             <td>{{$item->created_at->format('d-m-Y')}}</td>
-                            <td>{{$item->trang_thai}}</td>
+                            <td>
+                                @if($item->trang_thai == 'active') Có hiệu lực @endif
+                                @if($item->trang_thai == 'reject') Đã bị từ chối @endif
+                                @if($item->trang_thai == 'done') Đã hoàn thành @endif
+                                @if($item->trang_thai == 'pending') Đang chờ duyệt  @endif
+                            </td>
                             <td>
                                 <a href="{{route('employee.admin.detail', $item)}}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             </td>

@@ -169,7 +169,7 @@
                                         <button type="submit" class="btn btn-success">Duyệt ngay</button>
                                     </form>
 
-                                    <form action="{{route('employee.admin.hopdong.tuchoi')}}" method="POST" class="d-inline">
+                                    <form action="{{route('employee.admin.hopdong.duyet', $hopdong)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('PATCH')
                                         <input type="hidden" name="trang_thai" value="reject">
@@ -178,9 +178,7 @@
 
                                 @endif
 
-{{--                                @if($hopdong->trang_thai != 'pending' && $hopdong->trang_thai != 'done')--}}
-{{--                                    <form action="" method="POST" class="d-inline">--}}
-                                @if($hopdong->trang_thai != 'pending')
+                                @if($hopdong->trang_thai == 'active')
                                     <form action="{{route('employee.admin.hopdong.thanhly', $hopdong)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('PATCH')
@@ -188,6 +186,7 @@
                                         <button type="submit" class="btn btn-warning">Thanh lý ngay</button>
                                     </form>
                                 @endif
+
                             @endif
 
                             <a href="{{route('employee.admin.hopdong')}}" class="btn btn-primary mr-2">Trở về</a>

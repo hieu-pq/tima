@@ -30,6 +30,8 @@ class HopDongController extends Controller
         ]);
     }
 
+
+
     public function duyet(Request $request,HopDong $hopdong){
 
         $status = $request->trang_thai;
@@ -66,6 +68,11 @@ class HopDongController extends Controller
                 'ky_han' => json_encode($arr)
             ]);
 
+        } elseif($request->trang_thai == 'reject'){
+            $hopdong->update([
+                'employee_id' => Auth::user()->id,
+                'trang_thai' => 'reject',
+            ]);
         }
 
         session()->flash('success', 'Đã cập nhật trạng thái hợp đồng');
