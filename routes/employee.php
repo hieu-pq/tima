@@ -35,6 +35,7 @@ Route::prefix('employee')->name('employee.')->group(function () {
 
 //        Route::get('/hop-dong/{hopdong}/chi-tiet', [HopDongController::class, 'duyet'])->name('admin.hopdong.duyet');
         Route::patch('/hop-dong/{hopdong}/chi-tiet', [HopDongController::class, 'duyet'])->name('admin.hopdong.duyet');
+        Route::patch('/hop-dong/{hopdong}/tu-choi', [HopDongController::class, 'tuchoi'])->name('admin.hopdong.tuchoi');
 
         Route::patch('/hop-dong/{hopdong}/thanh-ly', [HopDongController::class, 'thanhly'])->name('admin.hopdong.thanhly');
 

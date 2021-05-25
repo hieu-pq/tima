@@ -169,7 +169,7 @@
                                         <button type="submit" class="btn btn-success">Duyệt ngay</button>
                                     </form>
 
-                                    <form action="" method="POST" class="d-inline">
+                                    <form action="{{route('employee.admin.hopdong.tuchoi')}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('PATCH')
                                         <input type="hidden" name="trang_thai" value="reject">
