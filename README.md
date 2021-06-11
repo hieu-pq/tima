@@ -8,6 +8,12 @@
 </p>
 
 ----------------------------------------
+
+<h3>Require</h3>
+<p> PHP 7 </p>
+<p> Apache </p>
+
+
 <h3>Setup project</h3>
 <p> Coppy file .env.example & paste + rename = .env </p>
 <p> Edit configuration in .env file, with DB name, DB username, DB password + connect port </p>
