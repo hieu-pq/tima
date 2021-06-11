@@ -24,4 +24,4 @@
 <p> composer update </p>
 <p> php artisan migrate --seed </p>
 <p> php artisan storage:link </p>
-<p> php -artisan serve </p>
+<p> php artisan serve </p>
