@@ -10,11 +10,12 @@
 ----------------------------------------
 <h3>Setup project</h3>
 <p> Coppy file .env.example & paste + rename = .env </p>
-<p> Edit configuration, with DB name, DB username, DB password + connect port </p>
+<p> Edit configuration in .env file, with DB name, DB username, DB password + connect port </p>
 
 
 <h3>Run project</h3>
 
 <p> composer update </p>
 <p> php artisan migrate --seed </p>
+<p> php artisan storage:link </p>
 <p> php -artisan serve </p>
