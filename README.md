@@ -25,3 +25,7 @@
 <p> php artisan migrate --seed </p>
 <p> php artisan storage:link </p>
 <p> php artisan serve </p>
+
+<h3>Admin URL</h3>
+<p>localhost:port/employee/dashboard</p>
+<p>Accout: admin@gmail.com / (password_not_provied) </p>
