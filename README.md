@@ -23,9 +23,10 @@
 
 <p> composer update </p>
 <p> php artisan migrate --seed </p>
+php artisan key:generate 
 <p> php artisan storage:link </p>
 <p> php artisan serve </p>
 
-<h3>Admin URL</h3>
+<h3>Admin/employee URL</h3>
 <p>localhost:port/employee/dashboard</p>
 <p>Accout: admin@gmail.com / (password_not_provied) </p>
