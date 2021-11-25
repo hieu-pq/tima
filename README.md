@@ -9,24 +9,50 @@
 
 ----------------------------------------
 
-<h3>Require</h3>
-<p> PHP 7 </p>
-<p> Apache </p>
+<h3> Features </h3>
 
+Admin
+- Manager budget for each year (can be fixed, adding the budget in batches to the total budget of the year.).
+- Manager user account (customer, employee, sub-admin)
+- Manager loans
+- View loan contract list and status
+
+Employee
+- Contract processing and approval/rejection of loan contracts
+- Check the budget
+- Check loan status and customer information
+- Manage recurring payments (monthly)
+- Liquidation
+
+Customer
+- Sign in, sign up
+- Create request loan contract
+- Manager self information
+- Verify information (upload ID card or something same to employee verify)
+- Check loan status
+- Check history loan contract
+
+--------------------------------------
+
+<h3>Require</h3>
+- PHP 7
+- Apache
+- Homestead (windows) or valet (mac)
+- Composer
 
 <h3>Setup project</h3>
-<p> Coppy file .env.example & paste + rename = .env </p>
-<p> Edit configuration in .env file, with DB name, DB username, DB password + connect port </p>
+- Coppy file .env.example & paste + rename = .env 
+- Edit configuration in .env file, with DB name, DB username, DB password + connect port 
 
 
 <h3>Run project</h3>
 
-<p> composer update </p>
-<p> php artisan migrate --seed </p>
-php artisan key:generate 
-<p> php artisan storage:link </p>
-<p> php artisan serve </p>
+$ composer update 
+$ php artisan migrate --seed
+$ php artisan key:generate
+$ php artisan storage:link
+$ php artisan serve 
 
 <h3>Admin/employee URL</h3>
-<p>localhost:port/employee/dashboard</p>
-<p>Accout: admin@gmail.com / (password_not_provied) </p>
+- localhost:port/employee/dashboard
+- Accout: admin@gmail.com / (password_not_provied , please manual insert in migrate sample data)
