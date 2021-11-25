@@ -44,15 +44,16 @@ Customer
 - Coppy file .env.example & paste + rename = .env 
 - Edit configuration in .env file, with DB name, DB username, DB password + connect port 
 
-
 <h3>Run project</h3>
 
-$ composer update 
-$ php artisan migrate --seed
-$ php artisan key:generate
-$ php artisan storage:link
-$ php artisan serve 
+- $ composer update 
+- $ php artisan migrate --seed
+- $ php artisan key:generate
+- $ php artisan storage:link
+- $ php artisan serve 
 
 <h3>Admin/employee URL</h3>
+
 - localhost:port/employee/dashboard
+
 - Accout: admin@gmail.com / (password_not_provied , please manual insert in migrate sample data)
